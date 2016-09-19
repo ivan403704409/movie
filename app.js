@@ -13,6 +13,7 @@ app.engine('html', swig.renderFile)
 
 
 app.use('/', require('./router/index'))
+app.use('/api', require('./router/api'))
 
 app.listen(port)
 console.log('app start at port ' + port)

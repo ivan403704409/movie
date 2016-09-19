@@ -8,7 +8,7 @@ let MoviceSchema = new mongoose.Schema({
 	summary: String,
 	flash: String,
 	poster: String,
-	yesr: Number,
+	year: Number,
 	meta: {
 		createAt: {
 			type: Date,
@@ -31,15 +31,16 @@ MoviceSchema.pre('save', function(next){
 
 MoviceSchema.statics = {
 	fetch(cb){
-		return this.
+		console.log('in')
+		return this
 			.find({})
 			.sort('meta.updateAt')
-		exec(cb)
+			.exec(cb)
 	},
 	findById(id, cb){
 		return this
 			.findOne({ _id: id })
-		exect(cb)
+			.exect(cb)
 	}
 }
 module.exports = MoviceSchema
